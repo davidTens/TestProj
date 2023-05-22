@@ -6,6 +6,9 @@ final class ViewController: UIViewController {
     // MARK: - Dependencies
 
     private let viewModel: ItemsViewModel
+
+    // MARK: - properties
+
     private var cancellables = Set<AnyCancellable>()
 
     private let cellId = "cellId"

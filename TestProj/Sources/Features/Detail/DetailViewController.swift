@@ -28,8 +28,8 @@ final class DetailViewController: UIViewController {
     init(viewData: DetailViewData) {
         self.viewData = viewData
         headerImageView.loadImageUsingCacheWithURL(urlString: viewData.headerImage)
-        imageTitle.text = "Title - \(viewData.imageTitleText)"
-        principalOrFirstMaker.text = "Principal or first maker - \(viewData.principalOrFirstMakerText)"
+        imageTitle.text = "Title - \n\(viewData.imageTitleText)"
+        principalOrFirstMaker.text = "Principal or first maker - \n\(viewData.principalOrFirstMakerText)"
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = viewData.title
     }
