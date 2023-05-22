@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  TestProj
-//
-//  Created by Daviti Tsveniashvili on 5/21/23.
-//
-
 import UIKit
 
 @main
