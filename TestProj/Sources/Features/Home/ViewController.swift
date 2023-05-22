@@ -115,7 +115,6 @@ extension ViewController: UITableViewDelegate {
         if indexPath.section == tableView.numberOfSections - 1 && indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
             guard snapshot.numberOfItems == viewModel.itemsPerPage else { return }
             viewModel.fetch()
-            print(viewModel.itemsPerPage)
         }
     }
 }
