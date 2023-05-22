@@ -54,11 +54,4 @@ final class TestProjTests: XCTestCase {
         }
         wait(for: [expectation], timeout: 4)
     }
-
-    func testExample() throws {
-
-        let testNumber = 9
-        let sum = 81
-        XCTAssertEqual(testNumber * testNumber, sum)
-    }
 }
