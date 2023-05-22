@@ -2,6 +2,15 @@ import XCTest
 @testable import TestProj
 
 final class TestProjTests: XCTestCase {
+
+    override class func setUp() {
+        super.setUp()
+    }
+
+    override class func tearDown() {
+        super.tearDown()
+    }
+
     func testExample() throws {
 
         let testNumber = 9
