@@ -24,6 +24,7 @@ final class ViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.rowHeight = 200
         tableView.register(ItemsViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.delegate = self
         return tableView
     }()
 
@@ -44,7 +45,6 @@ final class ViewController: UIViewController {
         view.backgroundColor = .white
         setupSubViews()
         setupDiffableDataSource()
-        tableView.delegate = self
         snapshot.appendSections([.main])
         bindViewModel()
         viewModel.fetch()
