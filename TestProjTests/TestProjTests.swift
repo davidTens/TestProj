@@ -1,21 +1,6 @@
 import XCTest
 @testable import TestProj
 
-final class MockItemsViewService: XCTestCase, ItemsServiceProviding {
-
-    var shouldSuccess = true
-    
-    func getData(itemsPerPage: Int, completion: @escaping TestProj.APIResult) {
-        let itemModel = ArtObjects(id: "23", title: "title", longTitle: "longTitle", principalOrFirstMaker: "maker", productionPlaces: ["Amsterdam", "Vienna"], headerImage: .init(url: ""))
-
-        if shouldSuccess {
-            completion(.success([itemModel]))
-        } else {
-            completion(.failure(.invalidURL))
-        }
-    }
-}
-
 final class TestProjTests: XCTestCase {
 
     private var viewModel: ItemsViewModel!
