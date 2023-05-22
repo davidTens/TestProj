@@ -24,7 +24,7 @@ final class ItemsViewService {
                     })
                 ))
             case .failure(let error):
-                print(error)
+                completion(.failure(error))
             }
         }
     }
