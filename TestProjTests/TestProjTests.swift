@@ -1,13 +1,27 @@
 import XCTest
 @testable import TestProj
 
+final class MockItemsViewService: XCTestCase, ItemsServiceProviding {
+    
+    func getData(itemsPerPage: Int, completion: @escaping TestProj.APIResult) {
+        let itemModel = ArtObjects(id: "23", title: "title", longTitle: "longTitle", principalOrFirstMaker: "maker", productionPlaces: ["Amsterdam", "Vienna"], headerImage: .init(url: ""))
+        completion(.success([itemModel]))
+    }
+}
+
 final class TestProjTests: XCTestCase {
 
-    override class func setUp() {
+    private var viewModel: ItemsViewModel!
+    private var viewService: MockItemsViewService!
+
+    override func setUp() {
         super.setUp()
+
+        viewService = MockItemsViewService()
+        viewModel = ItemsViewModel(viewService: viewService)
     }
 
-    override class func tearDown() {
+    override func tearDown() {
         super.tearDown()
     }
 

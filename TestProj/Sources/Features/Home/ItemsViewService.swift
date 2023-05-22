@@ -2,7 +2,11 @@ import Foundation
 
 typealias APIResult = (Result<[ArtObjects], NetworkError>) -> Void
 
-final class ItemsViewService {
+protocol ItemsServiceProviding: AnyObject {
+    func getData(itemsPerPage: Int, completion: @escaping APIResult)
+}
+
+final class ItemsViewService: ItemsServiceProviding {
 
     // MARK: - dependencies
 

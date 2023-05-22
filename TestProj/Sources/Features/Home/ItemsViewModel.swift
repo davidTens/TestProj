@@ -5,7 +5,7 @@ final class ItemsViewModel {
 
     // MARK: - Dependencies
 
-    private let viewService: ItemsViewService
+    private let viewService: any ItemsServiceProviding
 
     // MARK: - properties
 
@@ -18,7 +18,7 @@ final class ItemsViewModel {
 
     // MARK: - Init
 
-    init(viewService: ItemsViewService) {
+    init(viewService: any ItemsServiceProviding) {
         self.viewService = viewService
     }
 
