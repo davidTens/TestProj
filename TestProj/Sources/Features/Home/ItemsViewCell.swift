@@ -43,12 +43,13 @@ final class ItemsViewCell: UITableViewCell {
 }
 
 extension ItemsViewCell {
-    func configure(titleText: String, imageURL: String) {
-        title.text = titleText
-        itemImageView.loadImageUsingCacheWithURL(urlString: imageURL)
+    func configure(with model: ArtObjects) {
+        title.text = model.longTitle
+        itemImageView.loadImageUsingCacheWithURL(urlString: model.headerImage.url)
     }
 }
 
+// MARK: - UIImageView extension
 
 let imageCache = NSCache<AnyObject, AnyObject>()
 extension UIImageView {

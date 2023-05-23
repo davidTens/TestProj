@@ -63,7 +63,7 @@ final class ViewController: UIViewController {
             .sink { state in
                 switch state {
                 case .loading:
-                    self.navigationItem.title = "loading"
+                    self.navigationItem.title = "loading..."
                 case .done:
                     self.navigationItem.title = "TestProj"
                 case .error(let error):
@@ -89,7 +89,7 @@ final class ViewController: UIViewController {
             switch self?.dataSource.snapshot().sectionIdentifiers[indexPath.section] {
             case .main:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! ItemsViewCell
-                cell.configure(titleText: item.longTitle, imageURL: item.headerImage.url)
+                cell.configure(with: item)
                 cell.selectionStyle = .none
                 return cell
             default:
