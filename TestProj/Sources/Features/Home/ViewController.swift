@@ -42,12 +42,25 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "TestProj"
-        view.backgroundColor = .white
+        if traitCollection.userInterfaceStyle == .dark {
+            view.backgroundColor = .black
+        } else {
+            view.backgroundColor = .white
+        }
         setupSubViews()
         setupDiffableDataSource()
         snapshot.appendSections([.main])
         bindViewModel()
         viewModel.fetch()
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.userInterfaceStyle == .dark {
+            view.backgroundColor = .black
+        } else {
+            view.backgroundColor = .white
+        }
     }
 
     private func bindViewModel() {
