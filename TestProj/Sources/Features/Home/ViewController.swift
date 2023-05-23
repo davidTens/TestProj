@@ -19,6 +19,8 @@ final class ViewController: UIViewController {
     private var dataSource: UITableViewDiffableDataSource<ItemsSection, ArtObjects>!
     private var snapshot = Snapshot()
 
+    // MARK: - UI
+
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
