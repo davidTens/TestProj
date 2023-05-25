@@ -2,6 +2,8 @@ import UIKit
 
 final class DetailViewController: UIViewController {
 
+    // MARK: - ui
+
     private let headerImageView: UIImageView = {
         let headerImageView = UIImageView()
         headerImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -23,13 +25,18 @@ final class DetailViewController: UIViewController {
         return principalOrFirstMaker
     }()
 
+    // MARK: - dependencies
+
     private let viewData: DetailViewData
+
+    // MARK: - init
 
     init(viewData: DetailViewData) {
         self.viewData = viewData
         headerImageView.loadImageUsingCacheWithURL(urlString: viewData.headerImage)
         imageTitle.text = "Title - \n\(viewData.imageTitleText)"
         principalOrFirstMaker.text = "Principal or first maker - \n\(viewData.principalOrFirstMakerText)"
+
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = viewData.title
     }
@@ -61,10 +68,18 @@ final class DetailViewController: UIViewController {
         view.addSubview(headerImageView)
 
         NSLayoutConstraint.activate([
-            headerImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerImageView.bottomAnchor.constraint(equalTo: view.centerYAnchor)
+            headerImageView.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor
+            ),
+            headerImageView.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor
+            ),
+            headerImageView.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor
+            ),
+            headerImageView.bottomAnchor.constraint(
+                equalTo: view.centerYAnchor
+            )
         ])
 
         let stackView = UIStackView(arrangedSubviews: [imageTitle, principalOrFirstMaker])
@@ -76,9 +91,18 @@ final class DetailViewController: UIViewController {
         view.addSubview(stackView)
 
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: headerImageView.bottomAnchor, constant: 10),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            stackView.topAnchor.constraint(
+                equalTo: headerImageView.bottomAnchor,
+                constant: 10
+            ),
+            stackView.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor,
+                constant: 12
+            ),
+            stackView.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor,
+                constant: -12
+            ),
         ])
     }
 }

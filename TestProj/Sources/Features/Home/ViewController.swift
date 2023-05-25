@@ -122,7 +122,14 @@ final class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = dataSource.itemIdentifier(for: indexPath)
-        let detailViewController = DetailViewController(viewData: .init(title: item?.title ?? "", headerImage: item?.headerImage.url ?? "", imageTitleText: item?.longTitle ?? "", principalOrFirstMakerText: item?.principalOrFirstMaker ?? ""))
+        let detailViewController = DetailViewController(
+            viewData: .init(
+                title: item?.title ?? "",
+                headerImage: item?.headerImage.url ?? "",
+                imageTitleText: item?.longTitle ?? "",
+                principalOrFirstMakerText: item?.principalOrFirstMaker ?? ""
+            )
+        )
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 
