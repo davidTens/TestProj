@@ -26,6 +26,7 @@
 		0B82DFD72A1B72D900EA386E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B82DFD62A1B72D900EA386E /* DetailViewController.swift */; };
 		0B82DFD92A1B755400EA386E /* DetailViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B82DFD82A1B755400EA386E /* DetailViewData.swift */; };
 		0B82DFDC2A1C05A200EA386E /* MockItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B82DFDB2A1C05A200EA386E /* MockItemsService.swift */; };
+		0B82DFE12A1FA09B00EA386E /* UIImageView+LoadImageUsingCacheWithURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B82DFE02A1FA09B00EA386E /* UIImageView+LoadImageUsingCacheWithURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		0B82DFD62A1B72D900EA386E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0B82DFD82A1B755400EA386E /* DetailViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewData.swift; sourceTree = "<group>"; };
 		0B82DFDB2A1C05A200EA386E /* MockItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemsService.swift; sourceTree = "<group>"; };
+		0B82DFE02A1FA09B00EA386E /* UIImageView+LoadImageUsingCacheWithURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadImageUsingCacheWithURL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		0B82DF8D2A1AA54400EA386E /* TestProj */ = {
 			isa = PBXGroup;
 			children = (
+				0B82DFDD2A1FA05F00EA386E /* Extensions */,
 				0B82DFCE2A1B723B00EA386E /* Sources */,
 				0B82DF8E2A1AA54400EA386E /* AppDelegate.swift */,
 				0B82DF902A1AA54400EA386E /* SceneDelegate.swift */,
@@ -203,6 +206,30 @@
 				0B82DFDB2A1C05A200EA386E /* MockItemsService.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		0B82DFDD2A1FA05F00EA386E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0B82DFDE2A1FA06700EA386E /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0B82DFDE2A1FA06700EA386E /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				0B82DFDF2A1FA07200EA386E /* UIImageView */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		0B82DFDF2A1FA07200EA386E /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				0B82DFE02A1FA09B00EA386E /* UIImageView+LoadImageUsingCacheWithURL.swift */,
+			);
+			path = UIImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B82DFE12A1FA09B00EA386E /* UIImageView+LoadImageUsingCacheWithURL.swift in Sources */,
 				0B82DFD72A1B72D900EA386E /* DetailViewController.swift in Sources */,
 				0B82DFC12A1AA6B000EA386E /* ItemsViewService.swift in Sources */,
 				0B82DFCB2A1B610500EA386E /* ItemsViewCell.swift in Sources */,
