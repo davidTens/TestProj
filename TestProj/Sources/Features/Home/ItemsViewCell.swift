@@ -65,12 +65,14 @@ extension ItemsViewCell {
     }
 }
 
-// MARK: - UIImageView extension
-
-let imageCache = NSCache<AnyObject, AnyObject>()
 extension UIImageView {
     
-    func loadImageUsingCacheWithURL(urlString: String, completion: (() -> Void)? = nil) {
+    func loadImageUsingCacheWithURL(
+        urlString: String,
+        completion: (() -> Void)? = nil
+    ) {
+
+        let imageCache = NSCache<AnyObject, AnyObject>()
 
         self.image = nil
         
