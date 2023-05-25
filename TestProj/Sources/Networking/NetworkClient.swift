@@ -6,7 +6,12 @@ struct NetworkClient {
     private let decoder: JSONDecoder
     private let session: URLSession
 
-    init(urlRepository: URLRepository, apiKey: String = "0fiuZFh4", decoder: JSONDecoder = .init(), session: URLSession = .shared) {
+    init(
+        urlRepository: URLRepository,
+        apiKey: String = "0fiuZFh4",
+        decoder: JSONDecoder = .init(),
+        session: URLSession = .shared
+    ) {
         self.urlRepository = urlRepository
         self.apiKey = apiKey
         self.decoder = decoder
