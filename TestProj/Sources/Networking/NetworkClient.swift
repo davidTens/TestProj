@@ -19,36 +19,37 @@ struct NetworkClient {
     }
 
     func getData<T>(
+        queryParameters: QueryParameters,
         itemsPerPage: Int,
         completion: @escaping (Result<T, NetworkError>) -> Void
     ) where T: Decodable {
 
-        let queryParameters = "?key=\(apiKey)&ps=\(String(itemsPerPage))"
+        let queryParameters = "?key=\(apiKey)\(queryParameters.rawValue)\(String(itemsPerPage))"
         let urlString = urlRepository.baseURL + queryParameters
         guard let url = URL(string: urlString)
         else {
             return completion(.failure(.invalidURL))
         }
-        
+
         let task = session.dataTask(with: url) { data, response, error in
             
             if let _ = error {
                 completion(.failure(.invalidResponse))
                 return
             }
-            
+
             guard let response = response as? HTTPURLResponse, response.statusCode == 200
             else {
                 completion(.failure(.invalidResponse))
                 return
             }
-            
+
             guard let data = data
             else {
                 completion(.failure(.serializationFailed))
                 return
             }
-            
+
             do {
                 let items = try decoder.decode(T.self, from: data)
                 completion(.success(items))
@@ -66,4 +67,8 @@ enum NetworkError: Error {
     case requestFailed
     case invalidResponse
     case serializationFailed
+}
+
+enum QueryParameters: String {
+    case ps = "&ps="
 }

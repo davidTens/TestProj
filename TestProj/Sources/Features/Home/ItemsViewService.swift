@@ -23,6 +23,7 @@ final class ItemsViewService: ItemsServiceProviding {
         completion: @escaping APIResult
     ) {
         networkClient.getData(
+            queryParameters: .ps,
             itemsPerPage: itemsPerPage
         )
         { (result: Result<ItemsModel, NetworkError>) in
