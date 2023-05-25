@@ -26,6 +26,7 @@ final class ItemsViewService: ItemsServiceProviding {
             itemsPerPage: itemsPerPage
         )
         { (result: Result<ItemsModel, NetworkError>) in
+
             switch result {
             case .success(let items):
                 completion(.success(
@@ -40,6 +41,7 @@ final class ItemsViewService: ItemsServiceProviding {
                         )
                     })
                 ))
+
             case .failure(let error):
                 completion(.failure(error))
             }
