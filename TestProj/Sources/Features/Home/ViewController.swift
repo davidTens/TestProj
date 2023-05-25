@@ -13,10 +13,10 @@ final class ViewController: UIViewController {
 
     private let cellId = "cellId"
 
-    private typealias DiffableDataSource = UITableViewDiffableDataSource<ItemsSection, ArtObjects>
-    private typealias Snapshot = NSDiffableDataSourceSnapshot<ItemsSection, ArtObjects>
+    private typealias DiffableDataSource = UITableViewDiffableDataSource<ItemsSection, ArtObject>
+    private typealias Snapshot = NSDiffableDataSourceSnapshot<ItemsSection, ArtObject>
 
-    private var dataSource: UITableViewDiffableDataSource<ItemsSection, ArtObjects>!
+    private var dataSource: UITableViewDiffableDataSource<ItemsSection, ArtObject>!
     private var snapshot = Snapshot()
 
     // MARK: - UI
@@ -121,7 +121,7 @@ final class ViewController: UIViewController {
         }
     }
 
-    private func udpateSnapshots(_ items: [ArtObjects]) {
+    private func udpateSnapshots(_ items: [ArtObject]) {
         snapshot.appendItems(items, toSection: .main)
         dataSource.apply(snapshot, animatingDifferences: false)
     }

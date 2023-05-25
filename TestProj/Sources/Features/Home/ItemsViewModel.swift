@@ -13,8 +13,8 @@ final class ItemsViewModel {
     private let pageLimit = 10000
     @Published var fetchingState: FetchingState = .loading
     private var cancellables = Set<AnyCancellable>()
-    private let artObjectsSubject = CurrentValueSubject<[ArtObjects], Never>([])
-    private(set) lazy var artObjectModel: AnyPublisher<[ArtObjects], Never> = makeArtObjectModel()
+    private let artObjectsSubject = CurrentValueSubject<[ArtObject], Never>([])
+    private(set) lazy var artObjectModel: AnyPublisher<[ArtObject], Never> = makeArtObjectModel()
 
     // MARK: - Init
 
@@ -34,7 +34,7 @@ final class ItemsViewModel {
     }
 
     private func handleAPIResults(
-        _ result: Result<[ArtObjects], NetworkError>
+        _ result: Result<[ArtObject], NetworkError>
     ) {
         switch result {
         case .success(let items):
@@ -45,7 +45,7 @@ final class ItemsViewModel {
         }
     }
 
-    private func makeArtObjectModel() -> AnyPublisher<[ArtObjects], Never> {
+    private func makeArtObjectModel() -> AnyPublisher<[ArtObject], Never> {
         artObjectsSubject
             .eraseToAnyPublisher()
     }

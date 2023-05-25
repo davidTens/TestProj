@@ -1,6 +1,6 @@
 import Foundation
 
-typealias APIResult = (Result<[ArtObjects], NetworkError>) -> Void
+typealias APIResult = (Result<[ArtObject], NetworkError>) -> Void
 
 protocol ItemsServiceProviding: AnyObject {
     func getData(itemsPerPage: Int, completion: @escaping APIResult)
@@ -31,7 +31,7 @@ final class ItemsViewService: ItemsServiceProviding {
             case .success(let items):
                 completion(.success(
                     items.artObjects.map({ object in
-                        ArtObjects(
+                        ArtObject(
                             id: object.id,
                             title: object.title,
                             longTitle: object.longTitle,

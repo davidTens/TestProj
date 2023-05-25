@@ -1,14 +1,14 @@
 import Foundation
 
 struct ItemsModel: Decodable {
-    let artObjects: [ArtObjects]
+    let artObjects: [ArtObject]
 
-    init(artObjects: [ArtObjects]) {
+    init(artObjects: [ArtObject]) {
         self.artObjects = artObjects
     }
 }
 
-struct ArtObjects: Decodable, Hashable, Identifiable {
+struct ArtObject: Decodable, Hashable, Identifiable {
     let id: String
     let title: String
     let longTitle: String
@@ -20,7 +20,7 @@ struct ArtObjects: Decodable, Hashable, Identifiable {
         hasher.combine(id)
     }
 
-    static func == (lhs: ArtObjects, rhs: ArtObjects) -> Bool {
+    static func == (lhs: ArtObject, rhs: ArtObject) -> Bool {
         return lhs.id == rhs.id
     }
 }

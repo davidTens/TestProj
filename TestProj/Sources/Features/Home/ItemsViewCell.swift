@@ -59,7 +59,7 @@ final class ItemsViewCell: UITableViewCell {
 }
 
 extension ItemsViewCell {
-    func configure(with model: ArtObjects) {
+    func configure(with model: ArtObject) {
         title.text = model.longTitle
         itemImageView.loadImageUsingCacheWithURL(urlString: model.headerImage.url)
     }
