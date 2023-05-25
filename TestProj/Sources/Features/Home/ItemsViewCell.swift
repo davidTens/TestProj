@@ -26,14 +26,30 @@ final class ItemsViewCell: UITableViewCell {
         addSubview(title)
 
         NSLayoutConstraint.activate([
-            title.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
-            title.leadingAnchor.constraint(equalTo: leadingAnchor),
-            title.trailingAnchor.constraint(equalTo: trailingAnchor),
+            title.bottomAnchor.constraint(
+                equalTo: bottomAnchor,
+                constant: -8
+            ),
+            title.leadingAnchor.constraint(
+                equalTo: leadingAnchor
+            ),
+            title.trailingAnchor.constraint(
+                equalTo: trailingAnchor
+            ),
 
-            itemImageView.topAnchor.constraint(equalTo: topAnchor),
-            itemImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            itemImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            itemImageView.bottomAnchor.constraint(equalTo: title.topAnchor, constant: -8)
+            itemImageView.topAnchor.constraint(
+                equalTo: topAnchor
+            ),
+            itemImageView.leadingAnchor.constraint(
+                equalTo: leadingAnchor
+            ),
+            itemImageView.trailingAnchor.constraint(
+                equalTo: trailingAnchor
+            ),
+            itemImageView.bottomAnchor.constraint(
+                equalTo: title.topAnchor,
+                constant: -8
+            )
         ])
     }
     
