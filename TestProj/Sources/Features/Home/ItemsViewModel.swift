@@ -27,10 +27,15 @@ final class ItemsViewModel {
         guard itemsPerPage < pageLimit else { return }
 
         fetchingState = .loading
-        viewService.getData(itemsPerPage: itemsPerPage, completion: handleAPIResults)
+        viewService.getData(
+            itemsPerPage: itemsPerPage,
+            completion: handleAPIResults
+        )
     }
 
-    private func handleAPIResults(_ result: Result<[ArtObjects], NetworkError>) {
+    private func handleAPIResults(
+        _ result: Result<[ArtObjects], NetworkError>
+    ) {
         switch result {
         case .success(let items):
             artObjectsSubject.send(items)
