@@ -13,7 +13,11 @@ struct NetworkClient {
         self.session = session
     }
 
-    func getData<T>(itemsPerPage: Int, completion: @escaping (Result<T, NetworkError>) -> Void) where T: Decodable {
+    func getData<T>(
+        itemsPerPage: Int,
+        completion: @escaping (Result<T, NetworkError>) -> Void
+    ) where T: Decodable {
+
         let queryParameters = "?key=\(apiKey)&ps=\(String(itemsPerPage))"
         let urlString = urlRepository.baseURL + queryParameters
         guard let url = URL(string: urlString)
